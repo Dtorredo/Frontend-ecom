@@ -283,11 +283,9 @@ export default function ContactPage() {
                     <Phone className="w-6 h-6 text-accent-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-foreground mb-1">Phone Numbers</h4>
+                    <h4 className="font-medium text-foreground mb-1">Phone</h4>
                     <div className="text-muted-foreground space-y-1">
-                      <p>Reception: +254 700 123 456</p>
-                      <p>Reservations: +254 700 123 457</p>
-                      <p>Restaurant: +254 700 123 458</p>
+                      <p>+254 700 123 456</p>
                     </div>
                   </div>
                 </div>
@@ -298,26 +296,9 @@ export default function ContactPage() {
                     <Mail className="w-6 h-6 text-accent-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-foreground mb-1">Email Addresses</h4>
+                    <h4 className="font-medium text-foreground mb-1">Email</h4>
                     <div className="text-muted-foreground space-y-1">
                       <p>info@grandnairobi.co.ke</p>
-                      <p>reservations@grandnairobi.co.ke</p>
-                      <p>events@grandnairobi.co.ke</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Hours */}
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-accent-foreground" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-foreground mb-1">Operating Hours</h4>
-                    <div className="text-muted-foreground space-y-1">
-                      <p>Reception: 24/7</p>
-                      <p>Restaurant: 6:00 AM - 11:00 PM</p>
-                      <p>Concierge: 24/7</p>
                     </div>
                   </div>
                 </div>
@@ -329,35 +310,11 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                     <Phone className="w-4 h-4 mr-2" />
-                    Call Restaurant Now
+                    Call Us Now
                   </Button>
                   <Button variant="outline" className="w-full">
                     <Mail className="w-4 h-4 mr-2" />
                     Email Us
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4">
-          <h3 className="text-2xl font-light text-center text-secondary-foreground mb-8">Find Us</h3>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-card rounded-lg overflow-hidden shadow-lg">
-              {/* Placeholder for map - in a real implementation, you'd use Google Maps or similar */}
-              <div className="aspect-video bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                  <h4 className="text-lg font-medium text-muted-foreground mb-2">Interactive Map</h4>
-                  <p className="text-muted-foreground">
-                    SamoCity Restaurant - 123 Uhuru Highway, Nairobi
-                  </p>
-                  <Button className="mt-4 bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Open in Google Maps
                   </Button>
                 </div>
               </div>
