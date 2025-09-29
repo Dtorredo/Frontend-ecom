@@ -209,64 +209,46 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section
-        className="relative h-[350px] bg-cover bg-center flex items-center justify-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(7, 80, 86, 0.4), rgba(7, 80, 86, 0.4)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
-        }}
-      >
-        <div className="text-center text-white max-w-3xl px-4">
-          <h2 className="text-3xl md:text-4xl font-light mb-3">CULINARY EXCELLENCE,</h2>
-          <h3 className="text-3xl md:text-4xl font-light mb-4">KENYAN FLAVORS</h3>
-          <p className="text-lg mb-6 max-w-xl mx-auto">
-            Experience exquisite cuisine crafted with passion, featuring the finest ingredients and authentic Kenyan flavors
-          </p>
-          <div className="flex justify-center">
-            <Link href="/menu">
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-2 text-base">
-                VIEW MENU
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Food Categories Section */}
-      <section className="bg-accent py-8">
+      <section className="py-8">
         <div className="container mx-auto px-4">
-          <h2 className="text-center text-accent-foreground text-2xl font-light mb-6">Our Specialties</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { 
-                name: "MAIN COURSES", 
-                image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "Hearty dishes with authentic flavors"
-              },
-              { 
-                name: "BEVERAGES", 
-                image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "Refreshing drinks and premium cocktails"
-              },
-              { 
-                name: "DESSERTS", 
-                image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "Sweet treats to end your meal"
-              },
-            ].map((service, index) => (
-              <div key={index} className="relative group cursor-pointer">
-                <div className="aspect-[3/2] rounded-lg overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+          <div className="flex flex-col md:flex-row gap-[80px]">
+            
+            <div className="w-full md:w-auto h-[800px] rounded-lg shadow-lg overflow-hidden">
+              <img
+                src="/poster.jpeg"
+                alt="Promotional Poster"
+                className="h-full w-auto max-w-full object-contain"
+              />
+            </div>
+
+            {/* 3 square cards – each ~266 × 240 px with inner gap */}
+            <div className="w-full md:w-[240px] flex flex-col gap-4 h-[800px]">
+              {[
+                { name: "MAIN COURSES", image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", description: "Hearty dishes with authentic flavors" },
+                { name: "BEVERAGES",   image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80", description: "Refreshing drinks and premium cocktails" },
+                { name: "DESSERTS",    image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80", description: "Sweet treats to end your meal" }
+              ].map((service) => (
+                <div
+                  key={service.name}
+                  className="relative group cursor-pointer flex-1 w-full bg-card rounded-lg shadow-lg overflow-hidden"
+                >
+                  {/* No inner padding/gap */}
+                  <div className="absolute inset-0 rounded-lg overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+
+                  {/* text overlay */}
+                  <div className="absolute inset-0 bg-black/50 rounded-lg flex flex-col items-center justify-center p-3 group-hover:bg-black/40 transition-all duration-300">
+                    <h3 className="text-white font-medium text-base text-center mb-1">{service.name}</h3>
+                    <p className="text-white/90 text-xs text-center">{service.description}</p>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-black/50 rounded-lg flex flex-col items-center justify-center p-3 group-hover:bg-black/40 transition-all duration-300">
-                  <h3 className="text-white font-medium text-base text-center mb-1">{service.name}</h3>
-                  <p className="text-white/90 text-xs text-center">{service.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
